@@ -1,0 +1,273 @@
+/*
+File: style.css
+Description: Main stylesheet for the website
+Author: Mario Mlinarić
+Last updated: May 4, 2025
+*/
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Use min-height: 100vh to make footer stick to the bottom */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Links */
+a {
+    color:indigo;
+    text-decoration: none;
+}
+
+/* Text */
+.bold {
+    font-weight: bold;
+}
+
+/* Make paragraphs lined up on left and right edges */
+p {
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+/* Lists */
+ul {
+    list-style-position: inside;
+}
+
+/* Navigation */
+.nav {
+    background-color: #cec9c5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    position: relative;
+}
+
+/* Used for the website logo */
+.nav img {
+    margin: 5px;
+    display: block;
+}
+
+/* Navbar links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    color: #17428A;
+    float: left;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px 10px;
+    align-items: center;
+}
+
+/* Nav toggle is only shown on phone devices */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    margin-left: auto;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+
+}
+
+/* Media query for tablets and phones */
+@media screen and (max-width: 1024px) {
+    /* Fix navigation toggle's positioning */
+    .nav-toggle {
+        display: flex;
+        padding: 10px;
+    }
+
+    /* Disable showing navbar links by default on mobile devices */
+    .nav-links {
+        top: 60px;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        text-align: right;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Container */
+.container {
+    flex: 1;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+/* <hr> is used for separating title and content*/
+.container hr {
+    margin-bottom: 10px;
+}
+
+/* Spacing between title and content */
+.container h1 {
+    padding: 10px 0;
+    text-align: center;
+}
+
+h2 {
+    padding: 10px 0;
+}
+
+/* Map */
+.map-container iframe {
+    width: 100%;
+    min-height: 50vh;
+}
+
+/* Hero sections */
+.hero-section {
+    overflow: hidden;
+}
+
+.hero-section img {
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 10px;
+}
+
+/* Separate left and right hero sections to different floats */
+.hero-img-left {
+    margin-right: 10px;
+    float: left;
+}
+
+.hero-img-right {
+    margin-left: 10px;
+    float: right;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Attractions */
+#searchbox {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+/* Used for each of the gallery images */
+.gallery-item {
+    margin: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive gallery on phones (shows only 2 columns) */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive gallery on smaller phones (shows only 1 column) */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* References */
+.reference {
+    margin-bottom: 15px;
+}
+
+/* Add some spacing between lists and content */
+.list-spacing {
+    margin-bottom: 10px;
+}
+
+/* Forms */
+.comment-form {
+    max-width: 500px;
+}
+
+.comment-form input {
+    width: 100%;
+}
+
+.comment-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.comment-form textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.comment-form hr {
+    margin-top: 10px;
+}
+
+.comment-form fieldset {
+    padding: 8px;
+}
+
+/* Banner on the home page */
+.banner {
+    background: linear-gradient(to right, #4A90E2, #17428A);
+    color: white;
+    padding: 50px 20px;
+    margin-bottom: 10px;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    padding: 10px;
+    text-align: center;
+}
+
+.banner p {
+    font-size: 1.5em;
+    text-align: center;
+}
